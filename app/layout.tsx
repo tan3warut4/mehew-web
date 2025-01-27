@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Istok_Web } from "next/font/google";
+import Navbar from "./components/navbar/Index";
 
 const istokWeb = Istok_Web({
   variable: "--font-istok-web",
@@ -19,7 +20,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${istokWeb.variable} antialiased`}>{children}</body>
+      <body className={`${istokWeb.variable} antialiased`}>
+        <Navbar />
+        {children}
+      </body>
     </html>
   );
 }
